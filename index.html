@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Inchi 🎉</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(-45deg,#f7a1b2,#fbc2eb,#fad0c4,#ff9a9e);
+  background-size:400% 400%;
+  animation:bg 12s ease infinite;
+  font-family:Poppins,sans-serif;
+}
+
+@keyframes bg{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+.container{
+  text-align:center;
+  color:white;
+  padding:20px;
+  max-width:360px;
+}
+
+.slice{
+  width:220px;
+  margin:auto;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+
+/* 🔥 REALISTIC FLAME */
+.flame{
+  transform-origin:50% 100%;
+  animation:flicker 0.25s infinite alternate;
+  filter: drop-shadow(0 0 6px rgba(255,140,0,.8));
+}
+
+@keyframes flicker{
+  0%{
+    transform:scaleX(1) scaleY(1) rotate(-2deg);
+    opacity:.9;
+  }
+  50%{
+    transform:scaleX(.9) scaleY(1.1) rotate(2deg);
+    opacity:1;
+  }
+  100%{
+    transform:scaleX(1.05) scaleY(.95) rotate(-1deg);
+    opacity:.85;
+  }
+}
+
+.message{
+  opacity:0;
+  transition:1.2s;
+  font-size:14px;
+  line-height:1.6;
+  margin-top:10px;
+}
+
+button{
+  margin-top:15px;
+  padding:10px 22px;
+  border:none;
+  border-radius:20px;
+  background:white;
+  color:#f07c95;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<!-- 🍰 SLICE CAKE SVG -->
+<svg class="slice" viewBox="0 0 240 220">
+
+  <!-- Plate -->
+  <ellipse cx="120" cy="205" rx="90" ry="10" fill="#e7c9a9"/>
+
+  <!-- Cake body -->
+  <polygon points="60,180 190,140 60,100" fill="#c68642"/>
+
+  <!-- Cream layers -->
+  <polygon points="60,160 175,135 60,145" fill="#fff3e0"/>
+  <polygon points="60,135 165,120 60,120" fill="#fff3e0"/>
+
+  <!-- Top frosting -->
+  <polygon points="60,100 190,140 60,110" fill="#ffd6e8"/>
+
+  <!-- Candle -->
+  <rect x="115" y="70" width="6" height="25" rx="2" fill="white"/>
+
+  <!-- 🔥 REALISTIC FLAME (PATH) -->
+  <path class="flame"
+        d="M118 60
+           C112 55,114 45,118 40
+           C122 45,124 55,118 60Z"
+        fill="url(#flameGradient)"/>
+
+  <!-- Flame Gradient -->
+  <defs>
+    <radialGradient id="flameGradient" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fffacd"/>
+      <stop offset="40%" stop-color="#ffd700"/>
+      <stop offset="70%" stop-color="#ff8c00"/>
+      <stop offset="100%" stop-color="#ff4500"/>
+    </radialGradient>
+  </defs>
+
+</svg>
+
+<h2>Happy Birthday, Inchi 🎉</h2>
+
+<p class="message" id="msg"></p>
+
+<button onclick="show()">Klik Surprise 🎁</button>
+
+</div>
+
+<script>
+function show(){
+  const m=document.getElementById("msg");
+  m.innerHTML=`
+  Selamat ulang tahun, <b>Ichi</b> 🤍<br><br>
+  Semoga kamu selalu diberi kesehatan, kekuatan, 
+  dan dikelilingi hal-hal baik yayng bikin kamu bahagia. 
+  Semakin tua, semoga kamu bisa makin deket sama mimpi-mimpi kamu
+  Dan jadi pribadi yang lebih lebih lebih tenang 
+  Makasih buat semuanya, makasih buat waktunya, buat cerita yang pernah kita buat
+  aku yakin cerita cerita itu bakalan jadi bagian dari perjalanan hidup kita kedepannya.
+  Jaga kesehatan, jaga diri baik baik biar kamu selalu dipertemukan sama hal-hal yang baik oce?<br><br>
+  Happy Birthday Andi Auzar Faridzy 🍰🔥
+  `;
+  m.style.opacity=1;
+}
+</script>
+
+</body>
+</html>
